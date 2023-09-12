@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="CodeHim">
+    <title>JavaScript Shopping Cart Project Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+	<!-- Demo CSS (No need to include it into your project) -->
+	<link rel="stylesheet" href="css/demo.css">
+  
+      <style>
+          .navbar{
+              height: 56px;
+              line-height: 56px;
+              padding: 0 26px;
+          }
+      
+      </style>
+  </head>
+  <body>
+ <header class="intro">
+ <h1>Chocolate Shop</h1>
+ <!-- <p>A simple shopping cart project in JavaScript and Bootstrap.</p> -->
+
+ <!-- <div class="action"> -->
+ <!-- <a href="https://www.codehim.com/collections/javascript-shopping-cart-examples-with-demo/" title="Back to download and tutorial page" class="btn back">Back to Tutorial</a> -->
+ 
+ </header>
+  
+      
+ <main>
+     <!-- Start DEMO HTML (Use the following code into your project)-->
+<nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+    <div class="row">
+        <div class="col">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button></div>
+    </div>
+</nav>
+
+
+<!-- Main -->
+<div class="container">
+    <div class="row">
+      <div class="col col-md-4">
+        <div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="./img/5Star.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">5Star</h4>
+    <p class="card-text">Price: ₹20</p>
+    <a href="#" data-name="5Star" data-price="20" class="add-to-cart btn btn-primary">Add to cart</a>
+  </div>
+</div>
+      </div>
+      <div class="col col-md-4">
+        <div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="./img/Kitkat.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">Kitkat</h4>
+    <p class="card-text">Price: ₹10</p>
+    <a href="#" data-name="Kitkat" data-price="10" class="add-to-cart btn btn-primary">Add to cart</a>
+  </div>
+</div>
+      </div>
+      <div class="col col-md-4">
+        <div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="./img/Munch.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">Munch</h4>
+    <p class="card-text">Price: ₹5</p>
+    <a href="#" data-name="Munch" data-price="5" class="add-to-cart btn btn-primary text-white">Add to cart</a>
+  </div>
+</div>
+      </div>
+       <div class="col col-md-4">
+        <div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="./img/Snickers.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">Snickers</h4>
+    <p class="card-text">Price: ₹5</p>
+    <a href="#" data-name="Snickers" data-price="5" class="add-to-cart btn btn-primary text-white">Add to cart</a>
+  </div>
+</div>
+      </div>
+      <div class="col col-md-4">
+        <div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="./img/Dairy Milk.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">Dairy Milk</h4>
+    <p class="card-text">Price: ₹10</p>
+    <a href="#" data-name="Dairy Milk" data-price="10" class="add-to-cart btn btn-primary text-white">Add to cart</a>
+  </div>
+</div>
+      </div>
+      <div class="col col-md-4">
+        <div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="./img/Perk.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">Perk</h4>
+    <p class="card-text">Price: ₹5</p>
+    <a href="#" data-name="Perk" data-price="5" class="add-to-cart btn btn-primary text-white">Add to cart</a>
+  </div>
+</div>
+      </div>
+      <div class="col col-md-4">
+        <div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="./img/Milka.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">Milka</h4>
+    <p class="card-text">Price: ₹5</p>
+    <a href="#" data-name="Milka" data-price="5" class="add-to-cart btn btn-primary text-white">Add to cart</a>
+  </div>
+</div>
+      </div>
+      <div class="col col-md-4">
+        <div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="./img/Godiva.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">Godiva</h4>
+    <p class="card-text">Price: ₹50</p>
+    <a href="#" data-name="Godiva" data-price="50" class="add-to-cart btn btn-primary text-white">Add to cart</a>
+  </div>
+</div>
+      </div>
+    </div>
+</div>
+
+  
+ <!-- Modal -->
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="show-cart table">
+          
+        </table>
+        <div>Total price: ₹<span class="total-cart"></span></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Order now</button>
+      </div>
+    </div>
+  </div>
+</div>
+     <!-- END EDMO HTML (Happy Coding!)-->
+ </main>
+ 
+    
+      <footer class="credit">Chocolate Shop © 2022 All Right Reserved </footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script  src="./js/script.js"></script>
+     
+  </body>
+</html>
